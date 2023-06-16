@@ -1,0 +1,13 @@
+Single Nuclei Cell Ranger Code
+
+# counts, single sample, human
+srun --partition=bioinfo --cpus-per-task=8 /ddn/gs1/home/delkerda/tools/cellranger-6.1.1/cellranger count --id=CTRL1 --transcriptome=/ddn/gs1/biotools/cellranger/references2020A/refdata-gex-GRCh38-2020-A --fastqs=/ddn/gs1/home/delkerda/single_cell/CTRL1 --sample=CTRL1 --expect-cells=5000 --localcores=8 --localmem=64 --no-bam=TRUE --include-introns=TRUE
+
+# counts, single sample, mouse
+srun --partition=bioinfo --cpus-per-task=8 /ddn/gs1/home/delkerda/tools/cellranger-6.1.1/cellranger count --id=Day14 --transcriptome=/ddn/gs1/biotools/cellranger/references2020A/refdata-gex-mm10-2020-A --fastqs=/ddn/gs1/home/delkerda/Guardia_Lab/Day14/Day14A,/ddn/gs1/home/delkerda/Guardia_Lab/Day14/Day14B,/ddn/gs1/home/delkerda/Guardia_Lab/Day14/Day14C,/ddn/gs1/home/delkerda/Guardia_Lab/Day14/Day14D --sample=Day14A,Day14B,Day14C,Day14D --expect-cells=5000 --localcores=8 --localmem=64 --include-introns=TRUE
+
+
+
+# counts, two samples
+srun --partition=bioinfo --cpus-per-task=8 /ddn/gs1/home/delkerda/tools/cellranger-6.1.1/cellranger count --id=CTRL2 --transcriptome=/ddn/gs1/biotools/cellranger/references2020A/refdata-gex-GRCh38-2020-A --fastqs=/ddn/gs1/home/delkerda/single_cell/CTRL2/CTRL2A,/ddn/gs1/home/delkerda/single_cell/CTRL2/CTRL2B --sample=CTRL2A,CTRL2B --expect-cells=5000 --localcores=8 --localmem=64 --no-bam=TRUE --include-introns=TRUE
+

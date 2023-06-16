@@ -1,0 +1,15 @@
+Cellranger-arc bash scripts
+
+ATAC+GEX, mouse reference
+
+# set path to local copy of cellranger arc
+export PATH=/ddn/gs1/home/delkerda/tools/cellranger-arc-2.0.2:$PATH
+
+# run cellranger arc
+/ddn/gs1/home/delkerda/tools/cellranger-arc-2.0.2/cellranger-arc count --id=WJ2_CO3 --reference=/ddn/gs1/biotools/cellrangerarc/references2020A/refdata-cellranger-arc-mm10-2020-A-2.0.0 --libraries=WJ2_CO3_libraries.csv --localcores=16 --localmem=64
+
+
+
+
+# run cellranger arc on slurm
+srun --partition=bioinfo --cpus-per-task=16 /ddn/gs1/home/delkerda/tools/cellranger-arc-2.0.2/cellranger-arc count --id=WJ3_DES5 --reference=/ddn/gs1/biotools/cellrangerarc/references2020A/refdata-cellranger-arc-mm10-2020-A-2.0.0 --libraries=WJ3_DES5_libraries.csv --localcores=16 --localmem=64
